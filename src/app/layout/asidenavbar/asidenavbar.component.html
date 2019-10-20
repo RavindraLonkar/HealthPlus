@@ -1,0 +1,21 @@
+<aside class="main-sidebar fixed-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar" style="height: auto;">
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu tree" data-widget="tree">
+        <!-- <li class="header">NAVIGATION</li> -->
+        <li><a routerLink="dashboard" routerLinkActive="active"> <i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i><span>Suppliers</span>
+          </a>
+          <ul class="treeview-menu">
+            <li ><a  routerLink="add-supplier" routerLinkActive="active"><i class="fa fa-files-o"></i>Add Supplier</a></li>
+            <li ><a routerLink="suppliers" routerLinkActive="active"><i class="fa fa-user-o"></i>Supplier Master</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>

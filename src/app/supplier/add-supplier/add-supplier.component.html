@@ -1,0 +1,35 @@
+<section class="content-header">
+  <h1>
+    ADD SUPPLIER
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Supplier</a></li>
+    <li><a href="#">Add-Supplier</a></li>
+  </ol>
+</section>
+<section class="content">
+  <mat-card>
+    <form [formGroup]="addSupplierForm">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%" fxLayoutWrap>
+
+        <div [ngClass]="{'has-error' : formErrors.name}" fxFlex="30%">
+          <mat-form-field>
+            <input [(ngModel)]="name" formControlName="name" matInput
+                   placeholder="First Name (As Per Pan Card)" (blur)="validate()">
+            <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div [ngClass]="{'has-error' : formErrors.name}" fxFlex="30%">
+          <mat-form-field>
+            <input [(ngModel)]="name" formControlName="name" matInput
+                   placeholder="First Name (As Per Pan Card)" (blur)="validate()">
+            <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+          </mat-form-field>
+        </div>
+
+      </div>
+    </form>
+  </mat-card>
+</section>

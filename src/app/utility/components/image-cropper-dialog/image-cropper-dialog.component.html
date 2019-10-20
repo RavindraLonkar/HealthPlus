@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Upload and Crop Image</h2>
+<mat-dialog-content class="mat-typography">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
+    <div fxFlex="100%">
+      <input type="file" (change)="fileChangeEvent($event)" [accept]="'.jpg,png'"/>
+    </div>
+  </div>
+  <hr/>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutWrap fxLayoutGap="2%" fxLayoutAlign="left">
+    <div fxFlex="50%">
+      <image-cropper
+        [imageChangedEvent]="imageChangedEvent"
+        [maintainAspectRatio]="false"
+        [resizeToWidth]="0"
+        format="png"
+        (imageCropped)="imageCropped($event)"
+        (imageLoaded)="imageLoaded()"
+        (loadImageFailed)="loadImageFailed()">
+      </image-cropper>
+    </div>
+    <div fxFlex="50%">
+      <img [src]="croppedImage" width="300" height="230"/>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Submit</button>
+</mat-dialog-actions>
