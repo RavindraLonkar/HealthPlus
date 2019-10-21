@@ -1,3 +1,56 @@
-<p>
-  suppliers works!
-</p>
+<section class="content-header">
+  <h1>
+    <b>Suppliers Master</b>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li><a href="#">Suppliers</a></li>
+  </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+  <mat-card>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%" fxLayoutWrap>
+      <span fxFlex="80%" routerLink="add-supplier"><button mat-raised-button>Add Supplier</button></span>
+      <mat-form-field fxFlex="20%">
+        <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
+      </mat-form-field>
+    </div>
+
+    <div class="mat-elevation-z8">
+      <mat-table [dataSource]="dataSource" matSort>
+        <!-- Name Column -->
+        <ng-container matColumnDef="Supplier Name">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.companyName}} </mat-cell>
+        </ng-container>
+
+        <!-- TaxStatus Column -->
+        <ng-container matColumnDef="Phone Number">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Phone Number</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.phoneNumber}} </mat-cell>
+        </ng-container>
+
+        <!-- PanNo Column -->
+        <ng-container matColumnDef="Email ID">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Email ID</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.emailId}} </mat-cell>
+        </ng-container>
+
+        <!-- contactMobile Column -->
+        <ng-container matColumnDef="Status">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+  </mat-card>
+
+</section>

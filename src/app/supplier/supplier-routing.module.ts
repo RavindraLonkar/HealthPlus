@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {AddSupplierComponent} from './add-supplier/add-supplier.component';
 import {SuppliersComponent} from './suppliers/suppliers.component';
 import {SupplierDetailsComponent} from './supplier-details/supplier-details.component';

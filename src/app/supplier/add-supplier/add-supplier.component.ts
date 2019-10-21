@@ -10,7 +10,7 @@ import {SupplierService} from '../supplier.service';
 @Component({
   selector: 'app-add-supplier',
   templateUrl: './add-supplier.component.html',
-  styleUrls: ['./add-supplier.component.sass']
+  styleUrls: ['./add-supplier.component.scss']
 })
 export class AddSupplierComponent implements OnInit {
 
@@ -27,16 +27,25 @@ export class AddSupplierComponent implements OnInit {
     private wsUtility: WsUtilityService
   ) {
     this.addSupplierForm = this.fb.group({
-      name: ['', [Validators.required, Validators.pattern('^[A-Za-z]{5}\\d{4}[A-Za-z]{1}$')]]
+      companyName: ['', [Validators.required]],
+      emailId: ['', [Validators.required, Validators.pattern('^[A-Za-z]{5}\\d{4}[A-Za-z]{1}$')]],
+      phoneNumber: ['', [Validators.required, Validators.pattern('^[A-Za-z]{5}\\d{4}[A-Za-z]{1}$')]],
+      active: ['', [Validators.required]]
     });
   }
 
   private validationMessages = {
-    name: {required: 'PAN is required', pattern: 'Please Enter valid PAN number'},
+    companyName: {required: 'Company name is required'},
+    emailId: {required: 'Email Id is required', pattern: 'Please Enter valid email id number'},
+    phoneNumber: {required: 'Phone number is required', pattern: 'Please enter valid phone number'},
+    active: {required: 'Status is required'},
   }
 
   private formErrors = {
-    name: '',
+    companyName: '',
+    emailId: '',
+    phoneNumber: '',
+    active: '',
   }
 
   ngOnInit() {

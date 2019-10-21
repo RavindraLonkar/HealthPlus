@@ -9,14 +9,17 @@ import {SupplierDetailsComponent} from './supplier-details/supplier-details.comp
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {
   MAT_CHECKBOX_CLICK_ACTION,
-  MAT_DIALOG_DATA,
+  MAT_DIALOG_DATA, MatAutocompleteModule, MatButtonModule,
   MatCardModule,
   MatDialogModule,
   MatDialogRef,
-  MatFormFieldModule, MatInputModule
+  MatFormFieldModule, MatIconModule, MatInputModule, MatPaginatorModule, MatRadioModule, MatSelectModule, MatTableModule, MatTabsModule
 } from '@angular/material';
 import {AuthenticationService} from '../auth/_services';
 import {ImageCropperService} from '../utility/components/image-cropper-dialog/image-cropper-service';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MaterialFileInputModule} from 'ngx-material-file-input';
+import {UtilityModule} from '../utility/utility.module';
 
 @NgModule({
   declarations: [AddSupplierComponent, EditSupplierComponent, SuppliersComponent, SupplierDetailsComponent],
@@ -26,9 +29,20 @@ import {ImageCropperService} from '../utility/components/image-cropper-dialog/im
     FormsModule,
     MatInputModule,
     ReactiveFormsModule,
+    FlexLayoutModule,
     MatFormFieldModule,
     MatCardModule,
     MatDialogModule,
+    MatSelectModule,
+    MatAutocompleteModule,
+    MatIconModule,
+    MatTabsModule,
+    MatButtonModule,
+    MatRadioModule,
+    MaterialFileInputModule,
+    UtilityModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
 
   providers: [

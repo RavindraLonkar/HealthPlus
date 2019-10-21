@@ -1,6 +1,6 @@
 <section class="content-header">
   <h1>
-    ADD SUPPLIER
+    <b>Add Supplier</b>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -10,25 +10,49 @@
 </section>
 <section class="content">
   <mat-card>
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%" fxLayoutWrap>
+      <span fxFlex="80%" routerLink="add-supplier"><button mat-raised-button>Suppliers</button></span>
+    </div>
     <form [formGroup]="addSupplierForm">
       <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="2%" fxLayoutWrap>
 
-        <div [ngClass]="{'has-error' : formErrors.name}" fxFlex="30%">
+        <div [ngClass]="{'has-error' : formErrors.companyName}" fxFlex="30%">
           <mat-form-field>
-            <input [(ngModel)]="name" formControlName="name" matInput
-                   placeholder="First Name (As Per Pan Card)" (blur)="validate()">
-            <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+            <input formControlName="companyName" matInput
+                   placeholder="Company Name" (blur)="validate()">
+            <mat-error *ngIf="formErrors.companyName">{{formErrors.companyName}}</mat-error>
           </mat-form-field>
         </div>
 
-        <div [ngClass]="{'has-error' : formErrors.name}" fxFlex="30%">
+        <div [ngClass]="{'has-error' : formErrors.phoneNumber}" fxFlex="30%">
           <mat-form-field>
-            <input [(ngModel)]="name" formControlName="name" matInput
-                   placeholder="First Name (As Per Pan Card)" (blur)="validate()">
-            <mat-error *ngIf="formErrors.name">{{formErrors.name}}</mat-error>
+            <input formControlName="phoneNumber" matInput
+                   placeholder="Phone Number" (blur)="validate()">
+            <mat-error *ngIf="formErrors.phoneNumber">{{formErrors.phoneNumber}}</mat-error>
           </mat-form-field>
         </div>
 
+        <div [ngClass]="{'has-error' : formErrors.emailId}" fxFlex="30%">
+          <mat-form-field>
+            <input formControlName="emailId" matInput
+                   placeholder="Email Id" (blur)="validate()">
+            <mat-error *ngIf="formErrors.emailId">{{formErrors.emailId}}</mat-error>
+          </mat-form-field>
+        </div>
+
+        <div [ngClass]="{'has-error' : formErrors.active}" fxFlex="30%">
+          <mat-form-field>
+            <input formControlName="active" matInput
+                   placeholder="Status" (blur)="validate()">
+            <mat-error *ngIf="formErrors.active">{{formErrors.active}}</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <hr>
+      <div fxLayout="row"><br/>
+        <span fxFlex="80%"></span>
+        <span fxFlex="10%"><button (click)="addSupplierForm.reset()" mat-raised-button>Reset</button></span>
+        <span fxFlex="10%"><button (click)="submitSupplier()" mat-raised-button>Submit</button></span>
       </div>
     </form>
   </mat-card>
