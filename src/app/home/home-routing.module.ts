@@ -6,6 +6,8 @@ import {AddSupplierComponent} from '../supplier/add-supplier/add-supplier.compon
 import {EditSupplierComponent} from '../supplier/edit-supplier/edit-supplier.component';
 import {SupplierDetailsComponent} from '../supplier/supplier-details/supplier-details.component';
 import {SuppliersComponent} from '../supplier/suppliers/suppliers.component';
+import {AddMedicineCatgComponent} from '../medicine-catg/add-medicine-catg/add-medicine-catg.component';
+import {MedicinesCatgComponent} from '../medicine-catg/medicines-catg/medicines-catg.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent/*, canActivate: [AuthGuard]*/},
@@ -17,6 +19,8 @@ const routes: Routes = [
       {path: 'edit-supplier', component: EditSupplierComponent},
       {path: 'supplier-details', component: SupplierDetailsComponent},
       {path: 'suppliers', component: SuppliersComponent},
+      {path : 'add-medicine-catg', component : AddMedicineCatgComponent},
+      {path: 'medicines-catg', component: MedicinesCatgComponent}
     ]
   }
 ];
